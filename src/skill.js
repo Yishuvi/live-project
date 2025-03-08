@@ -1,6 +1,7 @@
 import LeftNav from "./navigation";
 import { useDispatch,useSelector } from "react-redux";
 import { useState } from "react";
+import swal from "sweetalert";
 const Skills =()=>{
     let skilldata=useSelector(state=>state.MySkills);
     let [skill,setSkill]=useState(skilldata.skill);
@@ -12,7 +13,7 @@ const Skills =()=>{
         };
         let mydata={type:'skill',info:userinfo}
         dispatch(mydata);
-        alert("Your skills information saved successfully...");
+        swal( "Save Success","Your skills information saved successfully...","success");
     }
   return(
     <div className="container mt-4">
